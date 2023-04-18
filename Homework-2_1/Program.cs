@@ -6,14 +6,14 @@
 
 
 
-void TakeSecondNum(int num)
+string TakeSecondNum(int num)
 {
     if ((num > 99 && num < 1000) || (num > -99 && num < -1000))
-        num = num / 10 % 10;
-    else
-        Console.Writeline("Вы ввели не положительное трехзначное число");
+       return $"{num / 10 % 10}";
+    return "Вы ввели не положительное и/или не трехзначное число";
 }
 
-Console.WriteLine("Введите целое положительное число: ");
-int num = int.Parse(Console.ReadLine()!);
-TakeSecondNum(num);
+Console.WriteLine("Введите положительное трехзначное число: ");
+// int num = int.Parse(Console.ReadLine()!);
+// TakeSecondNum(num);
+Console.WriteLine(TakeSecondNum(int.Parse(Console.ReadLine()!)));
