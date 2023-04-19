@@ -5,7 +5,7 @@
 // %(на 100) и / (на 10).
 
 
-
+//void - тоже правильно использовать
 string TakeSecondNum(int num)
 {
     if ((num > 99 && num < 1000) || (num > -99 && num < -1000))
