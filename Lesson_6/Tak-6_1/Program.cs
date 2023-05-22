@@ -1,6 +1,6 @@
-﻿// 1. Напишите программу, которая перевернёт одномерный массив
-// (последний элемент будет на первом месте, а первый - на последнем и т.д.)
-
+﻿// 2. Найдите произведение пар чисел в одномерном массиве.
+// Парой считаем первый и последний элемент, второй и предпсоледний
+// и тд. Результат запишите в новом массиве.
 
 
 // Блок вывода одномерного массива:
@@ -25,11 +25,20 @@ int[] MassNums(int size, int from, int to)
 }
 
 // ~ РЕШЕНИЕ ~ :
-void RevMas(int[] arr)
+int[] MultiMas(int[] arr)
 {
-int size = arr.Length;
-for (int i = 0; i < size / 2; i ++)
-(arr[i], arr[size - i - 1]) = (arr[size - i - 1], arr[i]);
+    int size = arr.Length;
+    int[] newMass = new int[size / 2 + size % 2];
+
+    for (int i = 0; i < size / 2; i++)
+    {
+        newMass[i] = arr[i] * arr[size - 1 - i];
+    }
+    if (size % 2 == 1)
+    {
+        newMass[newMass.Length-1] = arr[arr.Length/2];
+    }
+    return newMass;
 }
 
 // Блок ввода данных размерности массива:
@@ -44,5 +53,5 @@ int[] mass = MassNums(num, start, stop);
 Print(mass);
 
 // ~ ВЫВОД РЕЗУЛЬТАТА РЕШЕНИЯ ~ :
-RevMas(mass);
-Print(mass);
+int[] newNewMass =  MultiMas(mass);
+Print(newNewMass);
